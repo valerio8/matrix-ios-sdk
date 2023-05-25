@@ -2925,7 +2925,7 @@ andUnauthenticatedHandler: (MXRestClientUnauthenticatedHandler)unauthenticatedHa
                           success:(void (^)(NSArray *roomMemberEvents))success
                           failure:(void (^)(NSError *error))failure
 {
-    NSString *path = [NSString stringWithFormat:@"%@/rooms/%@/members", apiPathPrefix, roomId];
+    NSString *path = [NSString stringWithFormat:@"%@/rooms/%@/members", kMXAPIPrefixPathV3, roomId];
 
     MXWeakify(self);
     return [httpClient requestWithMethod:@"GET"
