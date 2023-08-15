@@ -1,3 +1,25 @@
+## Changes in 0.27.0 (2023-08-15)
+
+✨ Features
+
+- Add support for device hydration through the Crypto SDK (uses MSC3814) ([#1807](https://github.com/matrix-org/matrix-ios-sdk/pull/1807))
+
+🐛 Bugfixes
+
+- Fix parsing logic for legacy location events ([#1801](https://github.com/matrix-org/matrix-ios-sdk/pull/1801))
+
+⚠️ API Changes
+
+- Remove MXDehydrationService and old client methods. ([#1807](https://github.com/matrix-org/matrix-ios-sdk/pull/1807))
+
+
+## Changes in 0.26.12 (2023-06-21)
+
+🐛 Bugfixes
+
+- Ignore push rules with unknown condition kinds ([#7601](https://github.com/vector-im/element-ios/issues/7601))
+
+
 ## Changes in 0.26.11 (2023-06-13)
 
 🙌 Improvements
