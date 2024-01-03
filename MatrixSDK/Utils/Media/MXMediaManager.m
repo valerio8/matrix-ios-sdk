@@ -376,7 +376,7 @@ static MXLRUCache* imagesCacheLruCache = nil;
         }
         else
         {
-            mxMediaPrefix = [NSString stringWithFormat:@"%@/%@/download/", _homeserverURL, kMXContentPrefixPath];
+            mxMediaPrefix = [NSString stringWithFormat:@"%@%@/download/", _homeserverURL, kMXContentPrefixPath];
         }
         
         contentURL = [mxContentURI stringByReplacingOccurrencesOfString:kMXContentUriScheme withString:mxMediaPrefix];
@@ -415,7 +415,7 @@ static MXLRUCache* imagesCacheLruCache = nil;
         }
         else
         {
-            mxThumbnailPrefix = [NSString stringWithFormat:@"%@/%@/thumbnail/", _homeserverURL, kMXContentPrefixPath];
+            mxThumbnailPrefix = [NSString stringWithFormat:@"%@%@/thumbnail/", _homeserverURL, kMXContentPrefixPath];
         }
         NSString *thumbnailURL = [mxContentURI stringByReplacingOccurrencesOfString:kMXContentUriScheme withString:mxThumbnailPrefix];
         
@@ -447,7 +447,7 @@ static MXLRUCache* imagesCacheLruCache = nil;
 
 - (NSString *)urlOfIdenticon:(NSString *)identiconString
 {
-    return [NSString stringWithFormat:@"%@/%@/identicon/%@", _homeserverURL, kMXContentPrefixPath, [identiconString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]]];
+    return [NSString stringWithFormat:@"%@%@/identicon/%@", _homeserverURL, kMXContentPrefixPath, [identiconString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]]];
 }
 
 
