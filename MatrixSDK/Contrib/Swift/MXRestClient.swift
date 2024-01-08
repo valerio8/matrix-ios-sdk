@@ -2038,4 +2038,10 @@ public extension MXRestClient {
     @nonobjc @discardableResult func supportedMatrixVersions(completion: @escaping (_ response: MXResponse<MXMatrixVersions>) -> Void) -> MXHTTPOperation {
         return __supportedMatrixVersions(currySuccess(completion), failure: curryFailure(completion))
     }
+ 
+    // MARK: - Refresh Token
+    
+    @nonobjc @discardableResult func refreshAccessToken(refreshToken: String, completion: @escaping (_ response: MXResponse<MXRefreshResponse>) -> Void) -> MXHTTPOperation {
+        return __refreshAccessToken(refreshToken, success: currySuccess(completion), failure: curryFailure(completion))
+    }
 }
