@@ -3080,4 +3080,11 @@ Note: Clients should consider avoiding this endpoint for URLs posted in encrypte
 
 @end
 
+#pragma mark - Refresh token
+
+- (MXHTTPOperation*)refreshAccessToken:(NSString*)refreshToken
+                               success:(void (^)(MXRefreshResponse *refreshResponse))success
+                               failure:(void (^)(NSError *error))failure NS_REFINED_FOR_SWIFT;
+
+
 MX_ASSUME_MISSING_NULLABILITY_END
