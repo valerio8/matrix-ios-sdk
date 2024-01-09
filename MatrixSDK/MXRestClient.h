@@ -3078,13 +3078,12 @@ Note: Clients should consider avoiding this endpoint for URLs posted in encrypte
 - (MXHTTPOperation*)homeServerCapabilitiesWithSuccess:(void (^)(MXHomeserverCapabilities *capabilities))success
                                               failure:(void (^)(NSError *error))failure NS_REFINED_FOR_SWIFT;
 
-@end
-
 #pragma mark - Refresh token
 
 - (MXHTTPOperation*)refreshAccessToken:(NSString*)refreshToken
                                success:(void (^)(MXRefreshResponse *refreshResponse))success
                                failure:(void (^)(NSError *error))failure NS_REFINED_FOR_SWIFT;
 
+@end
 
 MX_ASSUME_MISSING_NULLABILITY_END
