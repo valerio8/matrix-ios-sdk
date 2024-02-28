@@ -191,6 +191,10 @@ NSString * const kMXCallKitAdapterAudioSessionDidActive = @"kMXCallKitAdapterAud
 }
 
 - (void)reportIncomingCall:(MXCall *)call {
+    [self reportIncomingCall:call completion:nil];
+}
+
+- (void)reportIncomingCall:(MXCall *)call completion:(void (^)(void))completion {
     NSUUID *callUUID = call.callUUID;
     
     if (self.calls[callUUID])
@@ -227,6 +231,10 @@ NSString * const kMXCallKitAdapterAudioSessionDidActive = @"kMXCallKitAdapterAud
     update.supportsDTMF = NO;
     
     [self.provider reportNewIncomingCallWithUUID:callUUID update:update completion:^(NSError * _Nullable error) {
+        if (completion) {
+            completion();
+        }
+
         if (error)
         {
             [call hangupWithReason:MXCallHangupReasonUnknownError];
