@@ -1426,7 +1426,7 @@ static NSUInteger preloadOptions;
 
 - (void)saveRoomsMessages
 {
-    if (roomsToCommitForMessages.count)
+    if (roomsToCommitForMessages.count > 0)
     {
         NSArray *roomsToCommit = [[NSArray alloc] initWithArray:roomsToCommitForMessages copyItems:YES];
         [roomsToCommitForMessages removeAllObjects];
@@ -1494,7 +1494,7 @@ static NSUInteger preloadOptions;
 
 - (void)saveRoomsState
 {
-    if (roomsToCommitForState.count)
+    if (roomsToCommitForState.count > 0)
     {
         // Take a snapshot of room ids to store to process them on the other thread
         NSDictionary *roomsToCommit = [NSDictionary dictionaryWithDictionary:roomsToCommitForState];
@@ -1555,7 +1555,7 @@ static NSUInteger preloadOptions;
 
 - (void)saveRoomsAccountData
 {
-    if (roomsToCommitForAccountData.count)
+    if (roomsToCommitForAccountData.count > 0)
     {
         // Take a snapshot of room ids to store to process them on the other thread
         NSDictionary *roomsToCommit = [NSDictionary dictionaryWithDictionary:roomsToCommitForAccountData];
@@ -1596,7 +1596,7 @@ static NSUInteger preloadOptions;
 #pragma mark - Rooms deletion
 - (void)saveRoomsDeletion
 {
-    if (roomsToCommitForDeletion.count)
+    if (roomsToCommitForDeletion.count > 0)
     {
         NSArray *roomsToCommit = [[NSArray alloc] initWithArray:roomsToCommitForDeletion copyItems:YES];
         [roomsToCommitForDeletion removeAllObjects];
@@ -1668,7 +1668,7 @@ static NSUInteger preloadOptions;
 
 - (void)saveRoomsOutgoingMessages
 {
-    if (roomsToCommitForOutgoingMessages.count)
+    if (roomsToCommitForOutgoingMessages.count  > 0)
     {
         NSArray *roomsToCommit = [[NSArray alloc] initWithArray:roomsToCommitForOutgoingMessages copyItems:YES];
         [roomsToCommitForOutgoingMessages removeAllObjects];
